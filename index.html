@@ -120,6 +120,11 @@
     .locations{ grid-template-columns:1fr; }
     .steps-flow{ grid-template-columns:1fr; }
   }
+  @media (max-width:600px){
+    .price-row{ flex-direction:column; align-items:flex-start; gap:2px; }
+    .price-row .amount{ white-space:normal; }
+    .price-box{ padding:8px 22px; }
+  }
   @media (max-width:480px){
     .hero h1{ font-size:1.7rem; }
     .nav-links{ justify-content:center; }
