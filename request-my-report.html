@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request My Report | AIMS Panel Physicians</title>
+<meta name="description" content="Request a PDF copy of your submitted immigration medical exam report.">
+<link rel="canonical" href="https://aimsgta.ca/request-my-report.html">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400,700,700i&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2321;
+    --ink-soft:#4d5652;
+    --paper:#faf8f3;
+    --card:#ffffff;
+    --line:#e3ddd0;
+    --teal-deep:#0a5346;
+    --teal:#0f6b5c;
+    --teal-bright:#13826e;
+    --gold:#c99a4a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Merriweather', Georgia, serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,.nav-brand,.btn{ font-family:'PT Sans', Arial, sans-serif; }
+  a{ color:inherit; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 24px; }
+
+  header{ background:var(--teal-deep); color:#fff; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,.15); }
+  .navbar{ display:flex; align-items:center; justify-content:space-between; max-width:1040px; margin:0 auto; padding:18px 24px; flex-wrap:wrap; gap:12px; }
+  .nav-brand{ font-weight:700; font-size:1.15rem; letter-spacing:.2px; text-decoration:none; color:#fff; display:flex; align-items:center; gap:10px; }
+  .nav-brand img{ height:28px; width:auto; }
+  .nav-links{ display:flex; gap:22px; list-style:none; margin:0; padding:0; font-family:'PT Sans',sans-serif; flex-wrap:wrap; }
+  .nav-links a{ text-decoration:none; color:#d8ece7; font-size:.88rem; font-weight:700; letter-spacing:.3px; text-transform:uppercase; }
+  .nav-links a:hover, .nav-links a.active{ color:#fff; border-bottom:2px solid var(--gold); padding-bottom:4px; }
+
+  .hero{ background: linear-gradient(160deg, rgba(10,83,70,.72) 0%, rgba(15,107,92,.68) 60%, rgba(19,130,110,.72) 100%), url("hero-flag.jpg") center 35%/cover no-repeat; color:#fff; text-align:center; padding:76px 24px 92px; }
+  .hero h1{ font-size:2.35rem; margin:0 0 18px; letter-spacing:.3px; }
+  .hero .tag{ font-family:'Merriweather',serif; font-style:italic; font-weight:700; font-size:1.05rem; max-width:640px; margin:6px auto; opacity:.96; }
+  .hero .tag.years{ text-decoration:underline; text-decoration-color:var(--gold); }
+  .hero .emedical{ display:inline-block; margin-top:14px; font-family:'PT Sans',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:1.5px; text-transform:uppercase; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:8px 18px; }
+
+  section{ padding:56px 0; }
+  h2{ color:var(--teal-deep); font-size:1.6rem; text-align:center; margin:0 0 8px; }
+  .kicker{ text-align:center; font-family:'PT Sans',sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:.78rem; color:var(--gold); font-weight:700; margin-bottom:10px; }
+  .lede{ text-align:center; color:var(--ink-soft); max-width:640px; margin:0 auto 40px; }
+
+  .locations{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .loc-card{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:30px; text-align:center; }
+  .loc-card h3{ color:var(--teal-deep); font-size:1.15rem; margin:0 0 6px; }
+  .loc-card .hours{ font-family:'PT Sans',sans-serif; font-weight:700; color:var(--ink-soft); font-size:.85rem; text-transform:uppercase; letter-spacing:.5px; margin:14px 0 18px; }
+  .loc-card a.link{ color:var(--teal-bright); text-decoration:underline; }
+  .btn{ display:inline-block; margin-top:16px; padding:12px 26px; border-radius:999px; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; font-size:.92rem; transition:background .15s ease; }
+  .btn:hover{ background:var(--teal-bright); }
+
+  .price-box{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 30px; max-width:680px; margin:0 auto; }
+  .price-row{ display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .price-row:last-of-type{ border-bottom:none; }
+  .price-row .age{ font-family:'PT Sans',sans-serif; }
+  .price-row .amount{ font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .price-note{ text-align:center; color:var(--ink-soft); font-size:.92rem; margin-top:18px; }
+  .price-note.refugee{ font-weight:700; font-style:italic; color:var(--teal-deep); }
+
+  .doctors{ background:var(--teal-deep); color:#fff; text-align:center; }
+  .doctors h2{ color:#fff; }
+  .doctors p{ max-width:680px; margin:0 auto; opacity:.95; }
+  .doctors .flag{ font-size:1.3rem; margin:14px 0; }
+  .doctors .assoc-link{ font-size:.85rem; word-break:break-all; color:#bfe3da; }
+  .doc-photos{ display:flex; justify-content:center; gap:28px; margin:0 0 30px; flex-wrap:wrap; }
+  .doc-photos figure{ margin:0; width:150px; }
+  .doc-photos img{ width:150px; height:150px; object-fit:cover; border-radius:50%; border:3px solid rgba(255,255,255,.35); }
+  .doc-photos figcaption{ margin-top:10px; font-family:'PT Sans',sans-serif; font-weight:700; font-size:.9rem; }
+  .ippa-badge{ margin-top:30px; }
+  .ippa-badge img{ max-width:280px; width:100%; height:auto; }
+
+  .steps-flow{ display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:900px; margin:0 auto; }
+  .step-block{ margin-bottom:0; text-align:left; }
+  .step-block img{ width:100%; max-width:220px; height:160px; object-fit:cover; border-radius:10px; margin-bottom:18px; display:block; border:1px solid var(--line); }
+  .step-block .num{ font-family:'PT Sans',sans-serif; color:var(--gold); font-weight:700; font-size:.8rem; letter-spacing:1.5px; text-transform:uppercase; }
+  .step-block h3{ color:var(--teal-deep); font-size:1.2rem; margin:6px 0 14px; }
+  .step-block p, .step-block ul{ color:var(--ink-soft); margin:0 0 10px; }
+  .step-block ul{ padding-left:20px; }
+  .step-block a{ color:var(--teal-bright); text-decoration:underline; }
+
+  footer{ background:var(--ink); color:#c9cdca; text-align:center; padding:28px 24px; font-family:'PT Sans',sans-serif; font-size:.85rem; }
+
+  @media (max-width:760px){
+    .locations{ grid-template-columns:1fr; }
+    .steps-flow{ grid-template-columns:1fr; }
+  }
+  @media (max-width:480px){
+    .hero h1{ font-size:1.7rem; }
+    .nav-links{ justify-content:center; }
+  }
+
+  .sub-hero{ background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 60%, var(--teal-bright) 100%); color:#fff; text-align:center; padding:48px 24px; }
+  .sub-hero h1{ font-size:1.9rem; margin:0; }
+
+  .content-card{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:34px; max-width:720px; margin:0 auto; }
+  .content-card h3{ color:var(--teal-deep); font-size:1.15rem; margin:0 0 12px; }
+  .content-card p{ margin:0 0 14px; color:var(--ink-soft); }
+  .content-card p:last-child{ margin-bottom:0; }
+  .content-card a{ color:var(--teal-bright); text-decoration:underline; }
+  .content-card iframe{ margin:20px 0; display:block; border-radius:8px; }
+
+  .notice-box{ background:#fdf6e8; border:1px solid #ecd9a6; border-radius:8px; padding:18px 22px; max-width:720px; margin:0 auto 28px; font-family:'PT Sans',sans-serif; font-size:.88rem; color:#7a5b1e; }
+
+  .lookup-form{ display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+  .lookup-form input{ flex:1; min-width:220px; padding:12px 16px; border:1px solid var(--line); border-radius:8px; font-family:'Merriweather',serif; font-size:.95rem; }
+  .lookup-form button{ font-family:'PT Sans',sans-serif; font-weight:700; padding:12px 24px; border-radius:8px; border:none; background:var(--teal); color:#fff; cursor:pointer; font-size:.92rem; }
+  .lookup-form button:hover{ background:var(--teal-bright); }
+
+  .contact-row{ display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:22px; font-family:'PT Sans',sans-serif; }
+  .contact-row .pill{ background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:10px 18px; font-size:.85rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a class="nav-brand" href="home.html"><img src="stethoscope.png" alt="">AIMS Panel Physicians</a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="appointment-booking.html">Appointment Booking</a></li>
+      <li><a href="furtherances.html">Furtherances</a></li>
+      <li><a href="check-case-submission.html">Check Case Submission</a></li>
+      <li><a href="request-my-report.html" class="active">Request My Report</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="sub-hero">
+  <div class="wrap"><h1>Request My Report</h1></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="content-card">
+      <p>If you would like to request a copy of your <a href="check-case-submission.html">recently submitted</a> IME case in PDF, please complete the below form, and it will be generated and emailed to you by our office. Make sure to wait 10 days after your exam before this request. Alternatively, you can request it in person.</p>
+      <p>Note that this is only available for cases processed since Jan 1, 2026.</p>
+      <p><strong>Do not attempt to retrieve a report for a case older than 12 months.</strong></p>
+
+      <iframe data-tally-src="https://tally.so/embed/J9AQJz?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Request My Report"></iframe>
+      <script>
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
+      </script>
+
+      <div class="contact-row">
+        <span class="pill">Etobicoke: <a href="mailto:frontdesk@aimsgta.ca">frontdesk@aimsgta.ca</a></span>
+        <span class="pill">Mississauga: <a href="mailto:maltondesk@aimsgta.ca">maltondesk@aimsgta.ca</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Copyright 2026, Airport Immigration Medical Services
+</footer>
+
+</body>
+</html>
